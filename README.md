@@ -16,7 +16,7 @@ Aim for a solution to take up 4-6 hours. Please do not spend time on making rend
 
 ## Main user stories
 1. As a User, I want to be able to see my account balance on the *Overview page*
-2. As a User, I want to be able to send and receive payments, using IBANs
+2. As a User, I want to be able to send and receive payments, using sort code and account number, IBANs or other reference type.
 3. As a User, I want to be able to see cashback tokens generated from each payment in the *Cashback page*
 4. As a User, I want to see a list of choices for spending my cashback tokens on the *Impact page*
 
