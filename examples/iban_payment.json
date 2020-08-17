@@ -1,0 +1,12 @@
+{
+	"UUID": "1234567890",
+	"creation_date": "2077-08-17T06:04:04.995730+00:00",
+	"booking_date": "2077-08-17T06:05:04.995730+00:00",
+	"payee": "John Smith",
+	"payee_primary_account": "GB26 1111 2222 2255 5555 01",
+	"payer": "Jane Smith",
+	"payer_primary_account": "GB26 1111 2222 2266 6666 01",
+	"movement_type": "IBAN",
+	"amount": 9000.01,
+	"currency": "EUR"
+}
