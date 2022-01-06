@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+</head>
+<body>
+    {% block content %}
+        {% for dict_item in choices %}
+            {% for key, value in dict_item.items() %}
+                <h1>Choice: {{key}} Tokens: {{ value }}</h1>
+            {% endfor %}
+        {% endfor %}
+    {% endblock content %}
+
+</body>
+</html>
