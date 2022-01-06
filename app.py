@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from functionality.amount import get_amount
 from functionality.payment import make_payment
 from db.fake_db import impact_choices
@@ -12,15 +12,13 @@ def amount(user_id: int):
     return render_template('overview.html', amount=user_amount, name=_name)
 
 
-@app.route('/payment/<string:payer_iban>/<string:payee_iban>/<float:payment_amount>', methods=["POST", "GET"])
-def payment(payer_iban: str,
-            payee_iban: str,
-            payment_amount: float
-            ):
-    response, tokens = make_payment(payer_iban=payer_iban,
-                                    payee_iban=payee_iban,
-                                    payment_amount=payment_amount,
-                                    sort_code=payee_iban[:2])
+@app.route('/payment', methods=["POST", "GET"])
+def payment():
+    req_data = request.get_json(force=True)
+    response, tokens = make_payment(payer_iban=req_data['payer_iban'],
+                                    payee_iban=req_data['payee_iban'],
+                                    payment_amount=req_data['payment_amount'],
+                                    sort_code=req_data['payee_iban'][:2])
 
     print(response)
     return render_template('cashback.html', name=response["payer"], tokens=tokens)
