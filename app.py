@@ -12,7 +12,7 @@ def amount(user_id: int):
     return render_template('overview.html', amount=user_amount, name=_name)
 
 
-@app.route('/payment', methods=["POST", "GET"])
+@app.route('/payment', methods=["POST"])
 def payment():
     req_data = request.get_json(force=True)
     response, tokens = make_payment(payer_iban=req_data['payer_iban'],
